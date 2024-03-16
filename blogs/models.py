@@ -4,7 +4,7 @@ from django.urls import reverse
 # Create your models here.
 class Publication(models.Model):
     title = models.CharField(max_length=200)
-    autor = models.ForeignKey(
+    author = models.ForeignKey(
         "auth.User",
         on_delete=models.CASCADE,
     )
@@ -14,7 +14,7 @@ class Publication(models.Model):
         return self.title
 
     def get_absolute_urls(self):
-        return reverse("publication_detail",kwargs={"pk":self.pk})
+        return reverse("publication_detail", kwargs={"pk":self.pk})
 
 
  
