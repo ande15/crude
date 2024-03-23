@@ -1,8 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
-
     <h2>{{ publication.title }}</h2>
     <p>{{ publication.body }}</p>
-    
+    <a href="{% url 'post_edit' publication.pk %}">Edit</a>
 {% endblock content %}
